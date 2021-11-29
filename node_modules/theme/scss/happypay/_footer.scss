@@ -1,0 +1,362 @@
+// Footer
+.circle,
+.cursor {
+  position: fixed;
+  background: $yellow;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  display: none;
+}
+
+.cursor {
+  border: 1px solid $black;
+  height: 10px;
+  width: 10px;
+  z-index: 10;
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  //mix-blend-mode: difference;
+  mix-blend-mode: luminosity;
+  z-index: 9999;
+  transition: left 0.25s ease-out, top 0.25s ease-out, transform 0.25s linear;
+}
+
+.circle.hover {
+  transform: translate(-50%, -50%) scale(2.5);
+  animation: liquid 2.5s linear infinite;
+}
+
+@keyframes liquid {
+
+0%,
+  100% {
+      border-radius: 28% 72% 46% 54% / 22% 50% 50% 78%;
+  }
+
+  25% {
+      border-radius: 73% 27% 41% 59% / 49% 20% 80% 51%;
+  }
+
+  50% {
+      border-radius: 47% 53% 28% 72% / 49% 76% 24% 51%;
+  }
+
+  75% {
+      border-radius: 48% 52% 68% 32% / 78% 54% 46% 22%;
+  }
+}
+
+
+@keyframes bouncer {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}
+
+.whatsapp-icon {
+  background-image: url('../images/chat_yellow.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  font-size: 0;
+  height: 80px; 
+  width: 80px;
+  position: fixed;
+  bottom: 15%;
+	right: 40px;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+
+  @media screen and (min-width:991px) {
+    bottom: 40px;
+  }
+
+  &:hover, 
+  &:focus {
+    //background-image: url('../images/chat_black.svg');
+    //filter: brightness(0) saturate(100%) invert(6%) sepia(15%) saturate(829%) hue-rotate(174deg) brightness(94%) contrast(90%);
+    cursor: pointer;
+    animation-name: bouncer;
+    -moz-animation-name: bouncer;
+  }
+}
+
+
+.wp-block-contact-form-7-contact-form-selector {
+
+  form {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+
+#footer-subscription {
+
+  .subscription-email,
+  .subscription-btn,
+  .subscription-signup {
+    
+
+    @media screen and (min-width:991px) { 
+      float: left;
+    }
+  }
+
+  .subscription-email {
+
+    @media screen and (min-width:991px) {
+      margin-right: 20px; 
+      width: calc(100% - 550px);
+    }
+
+    input {
+      border-radius: 0;
+      border-top: none;
+      border-right: none;
+      border-bottom: 2px solid $black;
+      border-left: none;
+    }
+  }
+
+  .subscription-btn {
+
+    @media screen and (min-width:991px) {
+      margin-right: 20px;
+      width: 230px; 
+    }
+  }
+
+  .subscription-signup {
+
+    @media screen and (min-width:991px) {
+      width: 280px;
+    }
+  }
+
+}
+
+
+#site-footer {
+  background: $black;
+  color: $white;
+
+  @media screen and (max-width:767px) {
+
+    .widget_block,
+    .widget_nav_menu {
+      margin-bottom: 30px;
+    }
+
+  }
+
+  .widget_nav_menu {
+
+    h2.h4 {
+      color: $yellow;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    ul.menu {
+      margin: 0; 
+      padding: 0; 
+
+      li {
+        list-style-type: none;
+
+        a {
+          color: $white;
+          font-family: 'Poppins';
+          font-size: 0.8em;
+          text-decoration: none;
+          text-transform: uppercase;
+
+          &:hover, 
+          &:focus {
+            color: $yellow;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .widget_block {
+
+    &.widget_text {
+      
+      p {
+        display: none;
+      }
+    }
+
+    ul.social-links-wrap {
+      margin: 0;
+      padding: 0;
+
+      li {
+        float: left;
+        list-style-type: none;
+        margin-right: 10px;
+
+        a {
+          background-size: contain;
+          background-repeat: no-repeat;
+          display: block;
+          font-size: 0;
+          height: 35px; 
+          width: 35px;
+
+          &.facebook {
+            background-image: url('../images/facebook_white.svg');
+
+            &:hover, 
+            &:focus {
+              filter: brightness(0) saturate(100%) invert(92%) sepia(79%) saturate(684%) hue-rotate(325deg) brightness(102%) contrast(94%);
+            }
+          }
+
+          &.instagram {
+            background-image: url('../images/instagram_white.svg');
+
+            &:hover, 
+            &:focus {
+              filter: brightness(0) saturate(100%) invert(92%) sepia(79%) saturate(684%) hue-rotate(325deg) brightness(102%) contrast(94%);
+            }
+          }
+
+          &.linkedin {
+            background-image: url('../images/linkedin_white.svg');
+
+            &:hover, 
+            &:focus {
+              filter: brightness(0) saturate(100%) invert(92%) sepia(79%) saturate(684%) hue-rotate(325deg) brightness(102%) contrast(94%);
+            }
+          }
+
+          img {
+            height: auto;
+            max-width: 35px;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .wp-block-group__inner-container {
+
+      .widget {
+
+        h2, 
+        h2.h4 {
+          color: $yellow;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+        }
+
+        ul,
+        ol {
+
+          
+        }
+        
+        ul.menu {
+
+          li {
+            list-style-type: none;
+
+            a {
+              color: $white;
+              font-family: 'Poppins';
+              text-decoration: none;
+              text-transform: uppercase;
+
+              &:hover, 
+              &:focus {
+                color: $yellow;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.scroll-to-top {
+  position: relative;
+
+  .o-scroll-up {
+    background-image: url('../images/up_arrow_yellow.svg');
+    background-repeat: no-repeat;
+    display: block;
+    float: right;
+    height: 35px;
+    width: 35px;
+    font-size: 0;
+    position: absolute;
+    right: 0;
+    top: -50px;
+  
+    &:hover, 
+    &:focus {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(57deg) brightness(102%) contrast(103%);
+    }
+  }
+}
+
+#sub-footer {
+  background: $black;
+  color: $white;
+
+  .row {
+
+    .col-sm {
+      //border-top: 1px solid $white;
+
+      p {
+        border-top: 1px solid $white;
+        color: $white; 
+        font-family: 'Poppins';
+        padding: 1rem 0;
+        margin: 0;
+        font-size: 0.8em;
+  
+        a {
+          color: $white; 
+          font-family: 'Poppins';
+          text-decoration: none;
+  
+          &:hover, 
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
