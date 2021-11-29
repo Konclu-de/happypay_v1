@@ -1,0 +1,75 @@
+// Fonts Faces
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/quicksand-light/Quicksand-Light.woff2') format('woff2'),
+      url('../fonts/quicksand-light/Quicksand-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'Avenir LT Std';
+  src: url('../fonts/avernir-book/AvenirLTStd-Book.woff2') format('woff2'),
+      url('../fonts/avernir-book/AvenirLTStd-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Bold';
+  src: url('../fonts/avernir-heavy/AvenirLTStd-Heavy.woff2') format('woff2'),
+      url('../fonts/avernir-heavy/AvenirLTStd-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/poppins-regular/Poppins-Regular.woff2') format('woff2'),
+      url('../fonts/poppins-regular/Poppins-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+// Define 
+//$font-family: '';
+
+
+
+header h2 a {
+  color: rgba(0,0,0,.9);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Drop cap (copied from the Gutenberg editor CSS)
+.has-drop-cap:not(:focus):first-letter {
+  float: left;
+  font-size: 8.4em;
+  line-height: .68;
+  font-weight: 100;
+  margin: .05em .1em 0 0;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+// Long Read Prose - needs bigger text
+// (If you change this, then change the same also in the `editor.css`.)
+.long-read {
+  font-size: clamp(1em, calc(0.625em + 1vw), 1.25em);
+  line-height: inherit;
+}
+
+// More link
+.more-link {
+  display: block;
+  margin-bottom: 1rem;
+}
