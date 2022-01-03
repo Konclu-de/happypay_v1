@@ -14,12 +14,12 @@
 
 <?php if( !empty( $heading_content ) ) : ?>
 
-  <section class="heading-strip <?php echo $background_color; ?>" style="<?php echo $bg_color; ?>">
+  <div class="heading-strip <?php echo $background_color; ?>" style="<?php echo $bg_color; ?>">
     <div class="container">
       <div class="row">
         <?php echo $heading_content; ?>
       </div>
     </div>
-  </section>
+  </div>
 
 <?php endif; ?>

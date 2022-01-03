@@ -69,8 +69,8 @@
 	}
 }
 
-.whatsapp-icon {
-  background-image: url('../images/chat_yellow.svg');
+#whatsapp-icon {
+  background-image: url('../images/chat_yellow.svg');     
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -86,11 +86,13 @@
   animation-fill-mode: both;
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  //animation-iteration-count: infinite;
+  //-webkit-animation-iteration-count: infinite;
 
   @media screen and (min-width:991px) {
-    bottom: 40px;
+    //bottom: 40px;
   }
 
   &:hover, 
@@ -118,34 +120,48 @@
   .subscription-email,
   .subscription-btn,
   .subscription-signup {
-    
 
     @media screen and (min-width:991px) { 
-      float: left;
+      //float: left;
     }
   }
 
   .subscription-email {
-
-    @media screen and (min-width:991px) {
-      margin-right: 20px; 
-      width: calc(100% - 550px);
-    }
-
+    float: none;
+    display: block;
+    margin: 0 auto;
+    max-width: 540px;
+    width: 100%;
+    
     input {
-      border-radius: 0;
-      border-top: none;
-      border-right: none;
-      border-bottom: 2px solid $black;
-      border-left: none;
+      border-radius: 5px;
+      border: 1px solid $black;
+      text-align: center;
     }
   }
 
   .subscription-btn {
+    display: block;
+    float: none;
+    width: 230px;
+    margin: 30px auto 0;
 
     @media screen and (min-width:991px) {
-      margin-right: 20px;
-      width: 230px; 
+      
+    }
+
+    input.wpcf7-submit {
+      background-color: $yellow;
+      border: 1px solid $yellow;
+      color: $black;
+      font-family: $poppins;
+
+      &:hover, 
+      &:focus {
+        border-color: $black;
+        background-color: $pink;
+        color: $black;
+      }
     }
   }
 
@@ -189,7 +205,7 @@
 
         a {
           color: $white;
-          font-family: 'Poppins';
+          font-family: $poppins;
           font-size: 0.8em;
           text-decoration: none;
           text-transform: uppercase;
@@ -321,6 +337,11 @@
     position: absolute;
     right: 0;
     top: -50px;
+
+    @media screen and (min-width:1200px) {
+      right: -50px;
+      top: -20px;
+    }
   
     &:hover, 
     &:focus {
@@ -341,14 +362,14 @@
       p {
         border-top: 1px solid $white;
         color: $white; 
-        font-family: 'Poppins';
+        font-family: $poppins;
         padding: 1rem 0;
         margin: 0;
         font-size: 0.8em;
   
         a {
           color: $white; 
-          font-family: 'Poppins';
+          font-family: $poppins;
           text-decoration: none;
   
           &:hover, 

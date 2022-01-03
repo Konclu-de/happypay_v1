@@ -13,6 +13,8 @@ if ( ! function_exists('happypay_enqueues') ) {
 		wp_register_style('bootstrapIcons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css', false, '1.5.0', null);
 		wp_enqueue_style('bootstrapIcons');
 
+		wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Quicksand:wght@300;400;500;600&display=swap', false );
+
 		wp_enqueue_style( 'gutenberg-blocks', get_template_directory_uri() . '/theme/css/blocks.css' );
 
 		wp_register_style('theme', get_template_directory_uri() . '/theme/css/happypay.css', false, null);

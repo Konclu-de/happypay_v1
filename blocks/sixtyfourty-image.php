@@ -1,4 +1,8 @@
 <?php
+// get section settings
+$background_colour = get_field('background_colour'); 
+$text_colour = get_field('text_colour'); 
+
 // get vars
 $image = get_field('image');
 $heading = get_field('heading');
@@ -8,7 +12,7 @@ $link = get_field('link');
 
 <!-- Two Coluimns Layout -->
 <?php if( !empty($image) && !empty($content) ):?>
-  <section class="two-columns-block">
+  <div class="section-row two-columns-block">
     <div class="row gx-5">
       <div class="col-md-7">
         <?php if( !empty( $image ) ): ?>
@@ -29,10 +33,10 @@ $link = get_field('link');
               $link_title = $link['title'];
               $link_target = $link['target'] ? $link['target'] : '_self';
             ?>
-            <a class="btn btn-primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+            <a class="btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
         </div>
         <?php endif; ?>
       </div>
     </div>
-  </section>
+  </div>
 <?php endif; ?>

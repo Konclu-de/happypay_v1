@@ -109,7 +109,7 @@ function happyday_custom_blocks() {
       wp_enqueue_script( 'slick-js', get_stylesheet_directory_uri() . '/theme/js/lib/slick.min.js', array('jquery') );
     }
   ));
-  // faq block
+  // team block
   acf_register_block_type(array(
     'name'                  => 'team', 
     'title'                 => __('Team Members'),
@@ -129,7 +129,7 @@ function happyday_custom_blocks() {
     'icon'                  => 'format-status', 
     'keywords'              => array( 'faq, frequently asked questions, questions, faqs')
   ));
-  // register banner block
+  // register heading strip block
   acf_register_block_type(array(
     'name'                  => 'heading-strip', 
     'title'                 => __('Heading Strip (for headers)'),
@@ -138,6 +138,16 @@ function happyday_custom_blocks() {
     'category'              => 'happypay-blocks', 
     'icon'                  => 'heading', 
     'keywords'              => array( 'heading strip, strip, back, yellow, full-width')
+  ));
+  // register three colimns icons block 
+  acf_register_block_type(array(
+    'name'                  => 'three-icons', 
+    'title'                 => __('Three Icons Layout'),
+    'description'           => __('A custom heading strip in either black of yellow'),
+    'render_template'       => 'blocks/three-icons.php',
+    'category'              => 'happypay-blocks', 
+    'icon'                  => 'ditor-insertmore', 
+    'keywords'              => array( 'three, three icons, icons, services')
   ));
   // yellow stats block
   acf_register_block_type(array(
@@ -149,7 +159,7 @@ function happyday_custom_blocks() {
     'icon'                  => 'chart-area', 
     'keywords'              => array( 'yellow, stats, block')
   ));
-  // register banner block
+  // register 60/40 block with image first
   acf_register_block_type(array(
     'name'                  => 'sixtyfourty-image', 
     'title'                 => __('Two Column 60/40 Image First'),
@@ -159,7 +169,7 @@ function happyday_custom_blocks() {
     'icon'                  => 'embed-photo', 
     'keywords'              => array( '60, 40, 60/40, two, column, image, first')
   ));
-  // register banner block
+  // register 60/40 block with text first
   acf_register_block_type(array(
     'name'                  => 'sixtyfourty-text', 
     'title'                 => __('Two Column 60/40 Text First'),
@@ -169,15 +179,62 @@ function happyday_custom_blocks() {
     'icon'                  => 'embed-post', 
     'keywords'              => array( '60, 40, 60/40, two, column, text, first')
   ));
+  // register footer signup block
+  acf_register_block_type(array(
+    'name'                  => 'footer-signup', 
+    'title'                 => __('Footer Signup Form'),
+    'description'           => __('A custom footer sign up form for MailChimp (Contact Form 7)'),
+    'render_template'       => 'blocks/footer-signup.php',
+    'category'              => 'happypay-blocks', 
+    'icon'                  => 'feedback', 
+    'keywords'              => array( 'form, footer, sign up, newsletter')
+  ));
   
 }
 add_action( 'acf/init', 'happyday_custom_blocks' );
 
 
+/**
+ * Social media links shortcode 
+ * @author Archie M
+ * 
+ */
+function shortcode_acf_tablefield() {
+
+  ob_start();
+  
+  $facebook = get_field('facebook', 'options');
+  $instagram = get_field('instagram', 'options');
+  $linkedin = get_field('linkedin', 'options');
+
+  if( $facebook || $instagram || $linkedin ){ ?>
+    <ul class="social-links-wrap">
+      <?php if( !empty($facebook) ) { ?>
+        <li>
+          <a class="social-icon facebook" href="<?php echo $facebook; ?>" target="_blank">Facebook</a>
+        </li>
+      <?php } ?> 
+      <?php if( !empty($instagram) ) { ?>
+        <li>
+          <a class="social-icon instagram" href="<?php echo $instagram; ?>" target="_blank">Instagram</a>
+        </li>
+      <?php } ?> 
+      <?php if( !empty($linkedin) ) { ?>
+        <li>
+          <a class="social-icon linkedin" href="<?php echo $linkedin; ?>" target="_blank">LinkedIn</a>
+        </li> 
+      <?php } ?> 
+    </ul>
+  <?php }
+
+  return ob_get_clean();
+}
+add_shortcode( 'footer_social', 'shortcode_acf_tablefield' );
+
+
 
 /**
  * Disable comments 
- * 
  * 
  */
 add_action('admin_init', function () {
@@ -225,47 +282,6 @@ add_action('wp_before_admin_bar_render', function() {
   global $wp_admin_bar;
   $wp_admin_bar->remove_menu('comments');
 });
-
-
-
-/**
- * Social media links shortcode 
- * @author Archie M
- * 
- */
-function shortcode_acf_tablefield() {
-
-  ob_start();
-  
-  $facebook = get_field('facebook', 'options');
-  $instagram = get_field('instagram', 'options');
-  $linkedin = get_field('linkedin', 'options');
-
-  if( $facebook || $instagram || $linkedin ){ ?>
-    <ul class="social-links-wrap">
-      <?php if( !empty($facebook) ) { ?>
-        <li>
-          <a class="social-icon facebook" href="<?php echo $facebook; ?>" target="_blank">Facebook</a>
-        </li>
-      <?php } ?> 
-      <?php if( !empty($instagram) ) { ?>
-        <li>
-          <a class="social-icon instagram" href="<?php echo $instagram; ?>" target="_blank">Instagram</a>
-        </li>
-      <?php } ?> 
-      <?php if( !empty($linkedin) ) { ?>
-        <li>
-          <a class="social-icon linkedin" href="<?php echo $linkedin; ?>" target="_blank">LinkedIn</a>
-        </li> 
-      <?php } ?> 
-    </ul>
-  <?php }
-
-  return ob_get_clean();
-}
-add_shortcode( 'footer_social', 'shortcode_acf_tablefield' );
-
-
 
 
 /**
@@ -345,4 +361,4 @@ function blockusers_init() {
   }
 
 }
-add_action( 'init', 'blockusers_init' );
+//add_action( 'init', 'blockusers_init' );

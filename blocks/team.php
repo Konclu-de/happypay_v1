@@ -3,10 +3,14 @@
  * Team block 
  * 
  */
+
+// get section settings
+$background_colour = get_field('background_colour'); 
+$text_colour = get_field('text_colour'); 
 ?>
 
 <!-- Team block -->
-<section class="team py-5">
+<div class="section-row team <?php echo $background_colour ?>">
   <?php if( have_rows('team_members') ): ?>
     <div class="row team-members">
       <?php while( have_rows('team_members') ) : the_row(); ?>
@@ -28,4 +32,4 @@
       <?php endwhile; ?>
   </div>
   <?php endif; ?>
-</section>
+</div>

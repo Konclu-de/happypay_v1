@@ -11,7 +11,7 @@ $banner_button_link = get_field('banner_button_link');
 <!-- PAge Banner -->
 <?php if( !empty($background_colour) || !empty($background_image) ) : ?>
     
-    <section class="banner-wrap">
+    <div class="section-row banner-wrap">
         <div class="page hero-banner"
             <?php if( !empty($background_image) ) { ?> style="background-image: url('<?php echo $background_image['url']; ?>');" <?php } else { ?> style="background-color: <?php echo $background_colour; ?>;" <?php } ?> >
             <div class="container">
@@ -40,5 +40,5 @@ $banner_button_link = get_field('banner_button_link');
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 <?php endif; ?>
