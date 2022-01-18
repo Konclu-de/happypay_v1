@@ -1,20 +1,17 @@
 <?php 
-  $heading_content = get_field('heading_content');
-  $background_color = get_field('background_color');
 
-  // determine background color 
-  if( $background_color == "yellow" ) {
-    $bg_color = "background-color: #f7da61";
-  } else if ( $background_color == "black" ) {
-    $bg_color = "background-color: #171a1e";
-  } else {
-    $bg_color = "background-color: #fffff";
-  }
+// 
+$background_colour = get_field('background_colour'); 
+$text_colour = get_field('text_colour'); 
+$button_colour = get_field('button_colour');
+
+//
+$heading_content = get_field('heading_content');
 ?>
 
 <?php if( !empty( $heading_content ) ) : ?>
 
-  <div class="heading-strip <?php echo $background_color; ?>" style="<?php echo $bg_color; ?>">
+  <div class="section-row heading-strip <?php echo $background_colour; ?>">
     <div class="container">
       <div class="row">
         <?php echo $heading_content; ?>

@@ -2,6 +2,7 @@
 // get section settings
 $background_colour = get_field('background_colour'); 
 $text_colour = get_field('text_colour'); 
+$button_colour = get_field('button_colour');
 
 // vars 
 $header_content = get_field('header_content');

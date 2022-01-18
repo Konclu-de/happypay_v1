@@ -77,6 +77,7 @@ HTML5 display definitions
       & > a {
         color: $black;
         font-family: $poppins;
+        font-weight: 500;
         padding: 10px;
 
         @media screen and (min-width:1200px) and (max-width:1399px) {
@@ -110,10 +111,10 @@ HTML5 display definitions
           @media screen and (min-width:1200px) {
             border-radius: .35rem;
             border-style: solid;
-            border-width: 1px;
+            border-width: 2px;
             margin: 0 0 0 1rem;
             padding: 5px 35px;
-            top: -6px;
+            top: -7px;
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -168,7 +169,12 @@ HTML5 display definitions
         border: 0;
 
         @media screen and (min-width:768px) {
+          border-bottom-right-radius: 10px;
+          border-bottom-left-radius: 10px; 
           padding: 0;
+          min-width: unset;
+          text-align: center;
+          width: 140px;
         }
 
         @media screen and (min-width:1200px) {
@@ -188,7 +194,8 @@ HTML5 display definitions
             padding: 20px 10px;
     
             @media screen and (min-width:1200px) {
-              font-size: .9rem;
+              font-size: .8rem;
+              //font-size: .9rem;
               //margin: 0 .5rem;
               padding: 15px ​5px !important;
             }
@@ -237,9 +244,18 @@ HTML5 display definitions
 }
 
 
+// Mobile 
+.navbar {
+
+  @media screen and (max-width:1199px) {
+    padding: 0;
+  }
+}
+
+
 // Hamburger 
 .navbar-toggler {
-
+  border: 0 !important;
 
   &:hover, 
   &:focus {

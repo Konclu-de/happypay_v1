@@ -3,8 +3,14 @@
  * Yellow Stats 
  * 
  */
+
+// get section settings
+$background_colour = get_field('background_colour'); 
+$text_colour = get_field('text_colour'); 
+$button_colour = get_field('button_colour');
 ?>
-<section class="yellow-stats">
+
+<div class="section-row yellow-stats <?php echo $background_colour; ?>">
   <?php if( have_rows('stats') ): ?>
     <?php $counter = 1;  //set up the counter ?>
     <div class="container">
@@ -31,4 +37,4 @@
       </div>
     </div>
   <?php endif; ?>
-</section>
+</div>

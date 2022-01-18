@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
 
         // Top menu transparency manipulation
         var nav = jQuery('.fixed-top');
-        var top = 150;
+        var top = 140;
 
         if ( jQuery(window).scrollTop() >= top ) {
             nav.addClass('scrolling');
@@ -36,19 +36,18 @@ jQuery(document).ready(function($) {
             nav.removeClass('scrolling');
         }
         
-
-        // Banner animation
-
-        
-        // Sidebar
-        /* checkOffset(); */
+        // Other
+        //$('.navbar-toggler')
+        //if ( $(this).hasClass("selected")) {
 
     });
 
 
     // Banner scroll to section 
-    $(".bounce .arrow").click(function(event){
-        $('#scrollto').animate({scrollTop: '+100px'}, 800);
+    $(".bounce .arrow").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#scrollto").offset().top - 110
+        }, 800);
     });
    
 
@@ -105,8 +104,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 /**
- * 
- * 
+ * WhatsApp Icon manipulation on scroll
+ * @author Archie M
  * 
  */
 var socialFloat = document.querySelector('#whatsapp-icon');
@@ -136,20 +135,17 @@ document.addEventListener("scroll", function(){
  * https://passatgt.github.io/gdpr-cookie-notice/
  * 
  */
-/*
 gdprCookieNotice({
     locale: 'en', //This is the default value
     timeout: 500, //Time until the cookie bar appears
     expiration: 30, //This is the default value, in days
-    domain: '.happypay.coo.za', //If you run the same cookie notice on all subdomains, define the main domain starting with a .
+    domain: '.happypay.co.za', //If you run the same cookie notice on all subdomains, define the main domain starting with a .
     implicit: true, //Accept cookies on scroll
     statement: 'https://www.happypay.co.za/privacy-policy/', //Link to your cookie statement page
     performance: ['JSESSIONID'], //Cookies in the performance category.
     analytics: ['ga'], //Cookies in the analytics category.
     marketing: ['SSID'] //Cookies in the marketing category.
 });
-*/
-
 
 
 /**
@@ -190,73 +186,4 @@ gdprCookieNotice({
     links.forEach(link => link.addEventListener('mousemove', animateit));
     links.forEach(link => link.addEventListener('mouseleave', animateit));
 })();
-*/
-
-
-//
-/*
-function runAnim() {
-
-	window.scroll(0,0);
-
-	var tl;
-
-	var timing = 1;
-	var easeStyl = "power4.out";
-
-
-	// Banner animation chaining JS //
-	stripesTl($(".main-wrap")).to(".h1 span", {
-		opacity: 1,
-		duration: 0,
-		delay: -0.4,
-		ease: "none"
-	})
-	.from(".h1 span", {
-		skewY: 7,
-		yPercent: 103,
-		duration: 1,
-		ease: easeStyl
-	})
-	.fromTo(".main-wrap .content-wrap", {
-		opacity: 0,
-		yPercent: 5,
-	},{
-		opacity: 1,
-		duration: 1,
-		delay: -0.4,
-		ease: easeStyl
-	})
-	.to(".main-wrap .bg-inner", {
-		scrollTrigger: {
-			trigger: ".main-wrap .bg-wrap",
-			start: "top top",
-			end: "80% top",
-			scrub: true,
-		},
-		scale: 1,
-		opacity: 0,
-		ease: "none"
-	})
-	.to(".banner-img", {
-		scale: 1,
-		duration: timing,
-		delay: timing * -0.8,
-		ease: easeStyl
-	})
-	.to(".banner-img", {
-		borderRadius: 0,
-		duration: timing,
-		delay: (timing - 0.5) * -1,
-		ease: easeStyl
-	})
-	.to(".banner-img", {
-		css: {
-			overflow: "visible"
-		},
-		duration: 0,
-		ease: "none"
-	});
-
-}
 */

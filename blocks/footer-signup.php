@@ -11,7 +11,9 @@ $footer_content = get_field('footer_content');
   <div class="section-row footer-signup <?php echo $background_colour; ?>">
     <div class="container">
       <div class="row align-items-left">
-        <?php echo $footer_content; ?>
+        <div class="col-12">
+          <?php echo $footer_content; ?>
+        </div>
       </div>
     </div>
   </div>

@@ -2,6 +2,7 @@
 // get section settings
 $background_colour = get_field('background_colour'); 
 $text_colour = get_field('text_colour'); 
+$button_colour = get_field('button_colour');
 
 // get vars
 $image = get_field('image');
@@ -40,8 +41,8 @@ $content_link = get_field('content_link');
                 $link_target = $content_link['target'] ? $content_link['target'] : '_self';
               ?>
               <a class="btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+            <?php endif; ?>
           </div>
-          <?php endif; ?>
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@
 // get section settings
 $background_colour = get_field('background_colour'); 
 $text_colour = get_field('text_colour'); 
+$button_colour = get_field('button_colour');
 
 // merchants blocks
 $merchants_block_heading = get_field('merchants_block_heading');
@@ -25,7 +26,13 @@ $merchants_block_heading = get_field('merchants_block_heading');
             <img src="<?php echo get_template_directory_uri() ?>/theme/images/left_arrow_black.svg" alt="Slick arrow previous">
           </div>
           <div id="merchants-slide-next" class="arrow d-inline pr-4">
-            <img src="<?php echo get_template_directory_uri() ?>/theme/images/right_arrow_white.svg" alt="Slick arrow next">
+            <?php if( $background_colour == 'yellow' ) { ?> 
+              <img src="<?php echo get_template_directory_uri() ?>/theme/images/right_arrow_white.svg" alt="Slick arrow next">
+            <?php } else if( ( $background_colour == 'white' ) || ( $background_colour == 'beige' ) ) { ?>
+              <img src="<?php echo get_template_directory_uri() ?>/theme/images/right_arrow_yellow.svg" alt="Slick arrow next">
+            <?php } else { ?>
+              <img src="<?php echo get_template_directory_uri() ?>/theme/images/right_arrow_white.svg" alt="Slick arrow next">
+            <?php } ?>
           </div>
         </div>
       </div>
