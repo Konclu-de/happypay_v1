@@ -3,6 +3,7 @@
  * Enqueues
  */
 
+// Enqueue of the assets
 if ( ! function_exists('happypay_enqueues') ) {
 	function happypay_enqueues() {
 

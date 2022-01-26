@@ -1,8 +1,10 @@
       <!-- Footer -->
       <?php happypay_footer_before();?>
 
+      <!--
       <div class="circle"></div>
       <div class="cursor"></div>
+      -->
 
       <?php 
         // Check to see if whatsapp has a number and display icon
@@ -10,9 +12,11 @@
         $whatsapp_message = urlencode( get_field( 'whatsapp_contact_message', 'option' ) ); 
 
         if( !empty($whatsapp_number) && !empty($whatsapp_message) ) { ?>
-          <a class="whatsapp-icon" href="https://wa.me/<?php echo $whatsapp_number; ?>?text=<?php echo $whatsapp_message;?>" target="_blank">
-            <!-- WhatsApp -->
-          </a>
+          <div id="whatsapp-icon-wrapper" class="container-fluid">
+            <a id="whatsapp-icon" class="whatsapp-icon" href="https://wa.me/<?php echo $whatsapp_number; ?>?text=<?php echo $whatsapp_message;?>" target="_blank">
+              <!-- WhatsApp -->
+            </a>
+          </div>
         <?php
         }
       ?>

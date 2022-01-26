@@ -13,11 +13,11 @@
   }
 ?>
 <main id="site-main" class="<?php echo $spacing_class; ?>" >
-  <?php happypay_mainbody_start(); ?>
-
-  <?php get_template_part('loops/single-post', get_post_format()); ?>
-
-  <?php happypay_mainbody_end(); ?>
+  <?php 
+    //happypay_mainbody_start();
+    get_template_part('loops/single-post', get_post_format());
+    //happypay_mainbody_end(); 
+  ?>
 </main>
 
 <?php

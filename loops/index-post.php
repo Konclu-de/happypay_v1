@@ -23,10 +23,10 @@
 
   <section>
     <?php if ( has_excerpt( $post->ID ) ) {
-    the_excerpt();
-    ?><a href="<?php the_permalink(); ?>">
-    	<?php _e( 'Continue reading →', 'happypay' ) ?>
-      </a>
+      the_excerpt();
+      ?><a href="<?php the_permalink(); ?>">
+        <?php _e( 'Continue reading →', 'happypay' ) ?>
+        </a>
   	<?php } else {
   	  the_content( __('Continue reading →', 'happypay' ) );
 	  } ?>

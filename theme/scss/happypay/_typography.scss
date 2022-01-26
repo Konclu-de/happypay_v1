@@ -1,6 +1,7 @@
 // Fonts Faces
+/*
 @font-face {
-  font-family: 'Quicksand';
+  font-family: $quicksand;
   src: url('../fonts/quicksand-light/Quicksand-Light.woff2') format('woff2'),
       url('../fonts/quicksand-light/Quicksand-Light.woff') format('woff');
   font-weight: 300;
@@ -34,14 +35,15 @@
   font-style: normal;
   font-display: swap;
 }
+*/
 
 
+// Define Font Families
+$poppins: 'Poppins', sans-serif;
+$quicksand: 'Quicksand', sans-serif;
 
-// Define 
-//$font-family: '';
 
-
-
+// 
 header h2 a {
   color: rgba(0,0,0,.9);
   text-decoration: none;
